@@ -100,13 +100,29 @@ public class Principale {
 		
 		CountVisitor vCount = new CountVisitor();
 		d.accept(vCount);
-		System.out.println("\n"+vCount.getCount()+"\n");
+		System.out.println("\n Nombre : "+vCount.getCount()+"\n");
+		
+		
+		System.out.println("les chemin de la recherche trouvés : ");
+		FindVisiteur findVisit = new FindVisiteur("Martini.class");
+		d.accept(findVisit);
+		for(String s : findVisit.find()) {
+			System.out.println(s);
+		}
+		System.out.println("=================================\n");
+		d.ls();
+		JavaCleanVisitor javaClVis = new JavaCleanVisitor();
+		d.accept(javaClVis);
+		javaClVis.dropf();
+		System.out.println("======NEXT========");
+		d.ls();
+		
 		
 		VisiteurAbs v = new RazVisiteur();
 		d.accept(v);
 		
 		
-		System.out.println("APRES"+"\n") ;
+		System.out.println("\nAPRES 2 "+"\n") ;
 		System.out.println("taille "+d.name+" : "+d.size()) ;
 		System.out.println("taille "+d2.name+" : "+d2.size()) ;
 		System.out.println("taille "+f.name+" : "+f.size()) ;

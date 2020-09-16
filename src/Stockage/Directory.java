@@ -89,6 +89,7 @@ public class Directory extends ElementStockage{
 			
 		for (ElementStockage s : elements)
 		{
+			
 			if (s.name.equals(nom))
 			collection.add(s.absoluteAdress()) ;
 		}
@@ -104,7 +105,8 @@ public class Directory extends ElementStockage{
 		ArrayList<String> temporaire ; // collection temporaire servant  stocker les adresses absolues obtenues par transitivit
 			
 		for (ElementStockage s : elements){
-			if (s.name==nom)
+			
+			if (s.name.equals(nom))
 			collection.add(s.absoluteAdress()) ;
 			
 			if (s instanceof Directory) // si l'lment de stockag est un dossier, lance la recherche sur s (appel rcursif)
